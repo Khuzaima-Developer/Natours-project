@@ -1,0 +1,87 @@
+.footer {
+  padding: 10rem 0;
+  background-color: #333;
+  color: white;
+  font-size: 1.4rem;
+
+  @include respond(tablet) {
+    padding: 8rem 0;
+  }
+
+  &-logo-box {
+    text-align: center;
+    width: 15rem;
+    @include respond(tablet) {
+      margin-bottom: 6rem;
+
+    }
+  }
+
+  &-logo {
+    width: 15rem;
+    height: auto;
+  }
+
+  &-nav {
+    padding-top: 2rem;
+    border-top: .1rem solid #777;
+    display: inline-block;
+
+    @include respond(tablet) {
+      width: 100%;
+      text-align: center;
+
+    }
+  }
+
+  &-list {
+    list-style: none;
+  }
+
+  &-item {
+    display: inline-block;
+    margin-right: 1.5rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &-copyright {
+    padding-top: 2rem;
+    border-top: .1rem solid #777;
+    display: inline-block;
+    color: #d3d3d3;
+
+    @include respond(tablet) {
+      width: 100%;
+      float: none;
+    }
+  }
+
+
+      [class^="footer-link"] {
+        color: #dedede;
+        text-decoration: none;
+        text-transform: uppercase;
+        display: inline-block;
+        font-weight: 700;
+      }    
+
+      &-link {
+        @include animateText;
+
+        &-para {
+            transition: all .3s ease;
+           &:hover {
+            color: $color-primary;
+            transform: scale(1.4);
+            background-color: #333;
+            @include secondaryBackground {
+              color: $color-secondary-light;
+            }
+           }
+        }
+      }
+  
+}

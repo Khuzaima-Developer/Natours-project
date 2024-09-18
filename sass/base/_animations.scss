@@ -1,0 +1,80 @@
+/* left to right */
+@keyframes moveFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  50% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* right to left */
+
+@keyframes moveFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  50% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* bottom to top  */
+@keyframes moveFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* button click animation */
+@keyframes buttonAnimation {
+  0% {
+    transform: scaleX(1) scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1.3) scaleY(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes navAnimation {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+    width: 100%;
+
+    transform: translateX(6rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes removeElement {
+  to {
+    display: inline-block;
+  }
+  from {
+    display: none;
+  }
+}

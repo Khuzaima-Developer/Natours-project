@@ -1,0 +1,74 @@
+// center te text
+.u-center-text {
+  text-align: center;
+}
+
+.u-center-element {
+  margin: auto;
+}
+
+.u-animate-text {
+  &:hover {
+    transform: skew(15deg, 2deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+  }
+}
+
+// margin top
+
+.u-mt-md {
+  margin-top: 4rem;
+
+  @include respond(tablet) {
+    margin-bottom: 3rem;
+  }
+}
+
+.u-mt-sm {
+  margin-top: 2rem;
+}
+
+// margin bottom in rem
+.u-mb-lg {
+  margin-bottom: 8rem;
+
+  @include respond(tablet) {
+    margin-bottom: 5rem;
+  }
+}
+
+.u-mb-sm {
+  margin-bottom: 1.5rem;
+}
+
+.u-mb-md {
+  margin-bottom: 4rem;
+}
+
+.u-mb-xl {
+  margin-bottom: 16rem;
+}
+
+// remove background color
+.u-remove-color-bg {
+  background-color: transparent;
+}
+
+// remove color
+.u-remove-color {
+  color: transparent;
+}
+
+.u-text-green {
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+
+  @include secondaryBackground {
+    @include backgroundOrange('');
+  }
+}

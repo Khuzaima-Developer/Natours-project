@@ -1,0 +1,28 @@
+.header {
+  position: relative;
+  height: 90vh;
+  background-size: cover;
+  background-position: top;
+  @include backgroundGreen("../../img/hero-small.jpg");
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  @include respond(phone) {
+    clip-path: polygon(0 0, 100% 0, 100% 90vh 0 100%);
+  }
+
+  @include secondaryBackground {
+    @include backgroundOrangeLight("../../img/hero.jpg");    //../../../img/hero-small@2x.jpg
+  }
+}
+
+.header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+  color: white;
+}
+
+.header__logo {
+  height: 3.5rem;
+}

@@ -1,0 +1,9 @@
+.green-text {
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right ,$color-primary-light , $color-primary-dark);
+
+    @include secondaryBackground {
+        @include backgroundOrange("")
+    }
+}

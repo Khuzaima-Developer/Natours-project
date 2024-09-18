@@ -1,0 +1,77 @@
+.composition {
+  position: relative;
+  height: 0;
+
+  &_photo {
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 1.5rem;
+    width: 55%;
+    position: absolute;
+    z-index: 5;
+    transition: all .2s;
+    outline-offset: 1rem;
+    filter: grayscale(50%);
+
+    @include respond(tablet) {
+      position: relative; // Remove absolute positioning
+      width: 33.33333%; // Adjust width for horizontal layout
+      border-radius: 1rem;
+
+  }
+
+    &_p1 {
+      left: 1rem;
+      top: -2rem;
+      @include respond(tablet) {
+        top: 1rem; // Reset top positioning
+        transform: scale(1.2); // Scale for responsiveness
+      }
+    }
+
+    &_p2 {
+      right: 0;
+      top: 2rem;
+
+      @include respond(tablet) {
+        top: -1rem; // Reset top positioning
+        transform: scale(1.3); // Scale for responsiveness
+        z-index: 9; // Ensure proper layering
+      }
+    }
+
+    &_p3 {
+      left: 20%;
+      top: 10rem;
+      @include respond(tablet) {
+        position: absolute;
+        top: 1rem;
+        left: 65%;
+        transform: scale(1.1);
+      }
+    }
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      z-index: 10;
+      outline: 1rem solid $color-primary;
+      filter: grayscale(0%);
+      @include respond(tablet) {
+        transform: scale(1.3);
+      }
+
+      @include secondaryBackground {
+        outline: 1rem solid $color-secondary-light;
+      }
+    }
+  }
+
+  &:hover &_photo:not(:hover) {
+    transform: scale(.9);
+    filter: grayscale(70%);
+    @include respond(tablet) {
+      transform: scale(1); // Scale for responsiveness
+    }
+  }
+  
+}
+

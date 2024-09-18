@@ -1,0 +1,123 @@
+@mixin clearFix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin textGreen {
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  @include secondaryBackground {
+    @include backgroundOrange("")
+  }
+}
+
+@mixin backgroundGreen($link) {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url($link);
+}
+
+@mixin backgroundGreenDark($link) {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 1),
+      rgba($color-primary-dark, 1)
+    ),
+    url($link);
+}
+
+@mixin backgroundOrange($link) {
+  background-image: linear-gradient(
+      to right bottom,
+      $color-secondary-light,
+      $color-secondary-dark
+    ),
+    url($link);
+}
+
+@mixin backgroundOrangeLight($link) {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-secondary-light, .8),
+      rgba($color-secondary-dark, .8)
+    ),
+    url($link);
+}
+
+@mixin backgroundBlue($link) {
+  background-image: linear-gradient(
+      to right bottom,
+      $color-teritiary-light,
+      $color-teritiary-dark
+    ),
+    url($link);
+}
+
+@mixin animateText {
+  transition: all .2s ease;
+  &:hover {
+    color: $color-primary;
+    transform: rotate(5deg) scale(1.4);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.4);
+
+    @include secondaryBackground {
+      color: $color-secondary-light;
+    }
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin secondaryBackground {
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em) , only screen and (min-width: 125em) {
+    @content  
+  }
+}
+
+// media query manager
+// 0-600px phone 
+// 600 - 900px tablet
+// 900- 1200px  tablet lanscape/laptop
+// 1200 - 1800px normal desktop
+// 1800 <    big size desktop
+
+// ORDER:  base + typography > general layout + grid > page layout > components
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {     // 600px
+    @content;
+  }
+  }
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: 56.25em) {     //900px
+    @content;
+  }
+  }
+  @if $breakpoint == laptop {
+    @media only screen and (max-width: 75em) {        //1200px
+    @content;
+  }
+  }
+  @if $breakpoint == bigDesktop {
+    @media only screen and (min-width: 112.5em) {     //<1800px
+    @content;
+  }
+  }
+}

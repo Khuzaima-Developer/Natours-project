@@ -1,0 +1,28 @@
+// underline text animation
+.underline {
+    position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0; /* Adjust distance from text */
+    left: 50%; /* Start from the center */
+    width: 0;
+    height: .25rem; /* Thickness of the underline */
+    background-color: $color-primary;
+    transition: all .3s ease-out;
+    transform: translateX(-50%);
+
+    @include secondaryBackground {
+      background-color: $color-secondary-light;
+    }
+
+    
+  }
+  &:hover::after {
+    width: 100%; /* Expand to full width */
+  }
+
+  &:active::after {
+    width: 0 ;
+  }
+}

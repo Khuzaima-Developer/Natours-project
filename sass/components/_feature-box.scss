@@ -1,0 +1,35 @@
+.feature-row {
+.feature-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 1.5rem;
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: .5rem;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+    transition: all .3s;
+
+    @include respond(tablet) {
+        padding: 2rem;
+    }
+
+    &-icon {
+        font-size: 6rem;
+        margin-bottom: .5rem;
+        display: inline-block;
+        @include textGreen;
+
+        @include respond(tablet) {
+            margin-bottom: 0;
+        }
+    }
+
+    &:hover {
+        transform: translateY(-1.5rem) scale(1.03);
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    }
+
+    &-text {
+        opacity: .7;
+    }
+}
+}
